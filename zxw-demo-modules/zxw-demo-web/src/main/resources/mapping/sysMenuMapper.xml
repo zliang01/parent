@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zxw.demo.dao.common.ISysMenuDaoService" >
+	<!-- 查询系统菜单 -->
+	<select id="querySysMenuInfo" resultType="java.util.Map"  parameterType="java.util.Map">
+		SELECT * FROM sys_menu where 1=1
+    	<if test="menuid != '' and menuid !=null" >    		
+				and menuid = ${menuid}
+    	</if>
+ 		<if test="menuname != '' and menuname !=null" >    		
+				and  menuname LIKE CONCAT('%','${menuname}','%' )  
+
+    	</if>
+    	<if test="menuurl != '' and menuurl !=null" >    		
+				and  menuurl = ${menuurl}
+    	</if>
+    	<if test="page != null and pageCapacity !=null" >    		
+				LIMIT ${page}, ${pageCapacity}
+    	</if>
+	</select>
+		<!-- 查询系统菜单 -->
+	<select id="querySysMenuInfoTotal" resultType="java.lang.Integer"  parameterType="java.util.Map">
+		select count(1) FROM sys_menu where 1=1
+		 <if test="menuid != '' and menuid !=null" >    		
+				and menuid = ${menuid}
+    	</if>
+ 		<if test="menuname != '' and menuname !=null" >    		
+				and  menuname LIKE CONCAT('%','${menuname}','%' )  
+
+    	</if>
+    	<if test="menuurl != '' and menuurl !=null" >    		
+				and  menuurl = ${menuurl}
+    	</if>
+	</select>
+</mapper>

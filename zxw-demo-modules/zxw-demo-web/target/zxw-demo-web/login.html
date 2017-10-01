@@ -1,0 +1,38 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>登录页面</title>
+<link href="src/login/login.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div class="top_div"></div>
+	<div class="group_div">
+		<div class="left_div">
+			<div class="tou"></div>
+			<div class="initial_left_hand" id="left_hand"></div>
+			<div class="initial_right_hand" id="right_hand"></div>
+		</div>
+		<p style="padding: 30px 0px 10px; position: relative;">
+			<span class="u_logo"></span> <input class="ipt" type="text" id="username"
+				placeholder="请输入用户名" value="">
+		</p>
+		<p style="position: relative;">
+			<span class="p_logo"></span> <input class="ipt" id="password"
+				type="password" placeholder="请输入密码" value="">
+		</p>
+		<div class="password_div">
+			<p  style="margin: 0px 35px 20px 45px;">
+				<span  style="float: left;"><a 
+					style="color: rgb(204, 204, 204);" href="#">忘记密码?</a></span> <span
+					style="float: right;"><!-- <a
+					style="color: rgb(204, 204, 204); margin-right: 10px;" href="#">注册</a> -->
+					<a class="password_a" id = "login_zxw" href="#">登录</a> </span>
+			</p>
+		</div>
+	</div>
+	<div style="text-align: center;"></div>
+  <script src="src/assets/requirjsMainBuild.js"></script>
+  <script src="src/assets/lib/requirejs/requirejs.min.js" data-main="login/js/login.js"></script> 
+</body>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zxw.demo.dao.common.IQueryWorkRecordDaoService" >
+		<!-- 查询快捷菜单 -->
+	<select id="queryWorkRecord" resultType="java.util.Map"  parameterType="java.util.Map">
+		SELECT * FROM work_record where 1=1
+		<if test="staffId != '' and staffId !=null" >    		
+				and staffId = ${staffId}
+    	</if>
+ 		<if test="workContent != '' and workContent !=null" >    		
+				and  workContent LIKE CONCAT('%','${workContent}','%' )  
+    	</if>
+    	<if test="staffName != '' and staffName !=null" >    		
+				and  staffName LIKE CONCAT('%','${staffName}','%' ) 
+    	</if>
+    	<if test="beginTime != '' and beginTime !=null" >
+				and  beginTime &gt;=${beginTime}
+    	</if>
+    	
+    	<if test="endTime != '' and endTime !=null" >
+				and  endTime &lt;=${endTime}
+    	</if>
+    	<if test="page != null and pageCapacity !=null" >    		
+				LIMIT ${page}, ${pageCapacity}
+    	</if>
+	</select>	
+</mapper>
