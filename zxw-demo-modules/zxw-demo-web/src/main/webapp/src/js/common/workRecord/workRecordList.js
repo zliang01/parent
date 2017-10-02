@@ -17,7 +17,10 @@ require(['list','Util'],function(List,Util){
 		var result = getForm();
 		var param={
 				service:"queryWorkRecordService",
-				method:"queryWorkRecord"
+				method:"queryWorkRecord",
+				params:JSON.stringify({
+					staffId:"zhangxuewei"
+				})
 		}
 		var form = {
 				params:result

@@ -5,23 +5,23 @@
 	<select id="queryWorkRecord" resultType="java.util.Map"  parameterType="java.util.Map">
 		SELECT * FROM work_record where 1=1
 		<if test="staffId != '' and staffId !=null" >    		
-				and staffId = ${staffId}
+				and staffId = #{staffId}
     	</if>
  		<if test="workContent != '' and workContent !=null" >    		
-				and  workContent LIKE CONCAT('%','${workContent}','%' )  
+				and  workContent LIKE CONCAT('%','#{workContent}','%' )  
     	</if>
     	<if test="staffName != '' and staffName !=null" >    		
-				and  staffName LIKE CONCAT('%','${staffName}','%' ) 
+				and  staffName LIKE CONCAT('%','#{staffName}','%' ) 
     	</if>
     	<if test="beginTime != '' and beginTime !=null" >
-				and  beginTime &gt;=${beginTime}
+				and  beginTime &gt;=#{beginTime}
     	</if>
     	
     	<if test="endTime != '' and endTime !=null" >
-				and  endTime &lt;=${endTime}
+				and  endTime &lt;=#{endTime}
     	</if>
     	<if test="page != null and pageCapacity !=null" >    		
-				LIMIT ${page}, ${pageCapacity}
+				LIMIT #{page}, #{pageCapacity}
     	</if>
 	</select>	
 </mapper>

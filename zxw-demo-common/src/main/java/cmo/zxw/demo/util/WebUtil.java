@@ -24,7 +24,11 @@ public class WebUtil {
 			 */
 			if (values.length == 1) {
 				if (StringUtil.isValidStr(values[0])) {
-					paraMap.put(name, values[0]);
+					if("params".equals(name)) {
+						paraMap.put(name, JsonUtil.convertJson2Object(values[0], Map.class));
+					}else {
+						paraMap.put(name, values[0]);
+					}
 				} else {
 					paraMap.put(name, null);
 				}
