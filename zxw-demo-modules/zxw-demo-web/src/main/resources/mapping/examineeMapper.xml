@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zxw.demo.dao.common.IQueryExamineerDaoService" >
+  <select id="queryExamineeInfo" resultType="java.util.Map"  parameterType="java.util.Map" >
+		SELECT * FROM `examinee_info` WHERE 1=1
+			<if test="code != '' and code !=null" >    		
+					and  code LIKE CONCAT('%','${code}','%' ) 
+	    	</if>
+	 		<if test="company != '' and company !=null" >    		
+					and  company LIKE CONCAT('%','${company}','%' )  
+	    	</if>
+	    	<if test="name != '' and name !=null" >    		
+					and  name LIKE CONCAT('%','${name}','%' ) 
+	    	</if>
+	 		<if test="idCard != '' and idCard !=null" >    		
+					and  idCard LIKE CONCAT('%','${idCard}','%' )  
+	    	</if>
+	    	<if test="workType != '' and workType !=null" >    		
+					and  workType LIKE CONCAT('%','${workType}','%' ) 
+	    	</if>
+	    	 <if test="applySubject != '' and applySubject !=null" >    		
+					and  applySubject LIKE CONCAT('%','${sapplySubjectex}','%' ) 
+	    	</if>
+	 		<if test="applySubjectCode != '' and applySubjectCode !=null" >    		
+					and  applySubjectCode LIKE CONCAT('%','${applySubjectCode}','%' )  
+	    	</if>	    	
+			<if test="page != null and pageCapacity !=null" >    		
+				LIMIT #{page}, #{pageCapacity}
+    	    </if>
+  </select>
+</mapper>
