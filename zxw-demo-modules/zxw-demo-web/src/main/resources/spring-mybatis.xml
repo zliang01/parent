@@ -69,7 +69,7 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 			<tx:method name="update*" propagation="REQUIRED" />
 			<tx:method name="modify*" propagation="REQUIRED" />
 			<tx:method name="edit*" propagation="REQUIRED" />
-			<tx:method name="delete*" propagation="REQUIRED" />
+			<tx:method name="del*" propagation="REQUIRED" />
 			<tx:method name="remove*" propagation="REQUIRED" />
 			<tx:method name="repair" propagation="REQUIRED" />
 			<tx:method name="delAndRepair" propagation="REQUIRED" />

@@ -1,8 +1,3 @@
-/**
-*	@author: zhangxuewei
-*	@date: 2017-06-11
-* 	@desc: 弹出框
-*/
 define([''], function(){
 	var _dialog = null;	//移除模块弹框
 	var showDialog = {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.zxw.demo.dao.common.IQueryExamineerDaoService" >
+<mapper namespace="com.zxw.demo.dao.common.IExamineerDaoService" >
   <select id="queryExamineeInfo" resultType="java.util.Map"  parameterType="java.util.Map" >
 		SELECT * FROM `examinee_info` WHERE 1=1
 			<if test="code != '' and code !=null" >    		
@@ -28,4 +28,65 @@
 				LIMIT #{page}, #{pageCapacity}
     	    </if>
   </select>
+  	  <select id="queryExamineeInfoTotal" resultType="java.lang.Integer"  parameterType="java.util.Map" >
+		SELECT count(*) as total FROM `examinee_info` WHERE 1=1
+			<if test="code != '' and code !=null" >    		
+					and  code LIKE CONCAT('%','${code}','%' ) 
+	    	</if>
+	 		<if test="company != '' and company !=null" >    		
+					and  company LIKE CONCAT('%','${company}','%' )  
+	    	</if>
+	    	<if test="name != '' and name !=null" >    		
+					and  name LIKE CONCAT('%','${name}','%' ) 
+	    	</if>
+	 		<if test="idCard != '' and idCard !=null" >    		
+					and  idCard LIKE CONCAT('%','${idCard}','%' )  
+	    	</if>
+	    	<if test="workType != '' and workType !=null" >    		
+					and  workType LIKE CONCAT('%','${workType}','%' ) 
+	    	</if>
+	    	 <if test="applySubject != '' and applySubject !=null" >    		
+					and  applySubject LIKE CONCAT('%','${sapplySubjectex}','%' ) 
+	    	</if>
+	 		<if test="applySubjectCode != '' and applySubjectCode !=null" >    		
+					and  applySubjectCode LIKE CONCAT('%','${applySubjectCode}','%' )  
+	    	</if>
+  </select>
+		  <!-- 删除用户(Remove) --> 
+  <delete id="delExamineeByIdCard"  parameterType="java.util.Map"> 
+		delete from examinee_info where code=#{code}
+  </delete> 
+<update id="editExamineeByIdCard" parameterType="java.util.Map" >  
+    UPDATE examinee_info 
+    <set> 
+      <if test="company != null" >  
+        company = #{company},
+      </if>
+     <if test="name != null" >  
+        name = #{name},
+      </if>
+       <if test="idCard != null" >  
+        idCard = #{idCard},
+      </if>
+      <if test="workType != null" >  
+        workType = #{workType},
+      </if>
+       <if test="applySubject != null" >  
+        applySubject = #{applySubject},
+      </if>
+      <if test="applySubjectCode != null" >  
+        applySubjectCode = #{applySubjectCode}
+      </if>
+    </set>  
+    where code = ${code}
+  </update>
+
+
+
+
+
+
+
+
+  
 </mapper>

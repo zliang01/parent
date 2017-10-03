@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>人员管理</title>
+<title>人员修改</title>
 <link rel="stylesheet" href="../../css/list.css" type="text/css"/>
 </head>
 <body>
 <!-- content -->
-<div id = "perListContent">
+<div id = "pereditContent">
 <div class="current">
 <div>
 	<form id="searchForm" name="searchForm">
@@ -18,7 +18,7 @@
                       编号
                    </label>
                    <div>
-                       <input id="code" name="code" type="text">
+                       <input  id="code" name="code" type="text" readonly="readonly">
                    </div>
                </li>
                <li>
@@ -58,7 +58,7 @@
                     工种
                    </label>
                    <div>
-                       <select id="perListSelect">
+                       <select id ="editSelect">
                       	 <option value="0"></option>
 						  <option value="1">货车检车员</option>
 						  <option value="2">列检值班员</option>
@@ -90,9 +90,7 @@
 		</div>
 	</form>
 		<div class = "btn-foot">
-			<button style="float: left" class="t-btn t-btn-sm button perListbtnadd">新增</button>
-			<button style="float: right" class="t-btn t-btn-sm button perListbtnSearch">查询</button>
-			<button style="float: right" class="t-btn t-btn-sm button perListbtnClear">重置</button>
+			<button style="float: right" class="t-btn t-btn-sm button pereditbtnadd">确定</button>
 		</div>
 </div>
 </div>
@@ -100,7 +98,8 @@
 <table id="perListTable" width="100%" border="0" cellpadding="0" cellspacing="0">
 </table>
 </div>
+</div>
     <script src="../../assets/requirjsMainBuild.js"></script>
-    <script src="../../assets/lib/requirejs/requirejs.min.js" data-main="../../../js/common/personnelList/personnelList"></script>
+    <script src="../../assets/lib/requirejs/requirejs.min.js" data-main="../../../js/common/personnelList/personedit"></script>
 </body>
 </html>
