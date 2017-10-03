@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zxw.demo.dao.common.IQueryMsgDaoService" >
+	<!-- 查询信息 -->
+	<select id="queryMsgInfo" resultType="java.util.Map">
+		SELECT * FROM message WHERE `status` = '0'
+	</select>
+	<update id="updateMsgStatus">
+		UPDATE message SET `status` = '1' WHERE `status` = '0'
+	</update>
+	<insert id="insertMsgInfo" parameterType="java.util.Map">
+		INSERT INTO message (msgInfo,status,createTime,createUser) VALUES ('${msgInfo}','${status}','${createTime}','${createUser}');
+	</insert>
+</mapper>

@@ -12,6 +12,47 @@ require(['kandtabs',
 		$('#quit').click($.proxy(logout,this));
 		//初始化菜单
 		initSysMenu();
+		initExamMsg();
+	}
+	var initExamMsg = function(){
+		var params = {
+				service:"queryMsgService",
+				method:"queryMsgInfo"
+		}
+		s=getid("exam_msg_div1");
+		s2=getid("exam_msg_div2");
+		s3=getid("exam_msg_div3");
+		$.ajax({
+			url: "/zxw-demo-web/commonAction!execute.action",
+			data:params,
+			success:function(result){
+				s2.innerHTML = result.beans[0].msgInfo;
+			}
+		})
+		s3.innerHTML=s2.innerHTML;
+		timer=setInterval(mar,30)
+	}
+	function mar(){
+		var params = {
+				service:"queryMsgService",
+				method:"queryMsgInfo"
+		}
+		$.ajax({
+			url: "/zxw-demo-web/commonAction!execute.action",
+			data:params,
+			success:function(result){
+				s2.innerHTML = result.beans[0].msgInfo;
+			}
+		})
+		s3.innerHTML=s2.innerHTML;
+		if(s2.offsetWidth<=s.scrollLeft){
+			s.scrollLeft-=s2.offsetWidth;
+		}else{
+			s.scrollLeft++;
+		}
+	}
+	function getid(id){
+		return document.getElementById(id);
 	}
 	var initSysMenu = function(){
 		var params={

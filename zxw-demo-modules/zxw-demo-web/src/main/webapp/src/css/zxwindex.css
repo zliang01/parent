@@ -116,3 +116,20 @@
 	float: left;
 	height: 100%;
 }
+.exam_msg_d1{
+position: absolute;
+left: 750px;
+top: 15px;
+width:400px;
+background-color:#066dc5;
+height:40px;
+overflow:hidden;
+white-space:nowrap;
+}
+.exam_msg_div2{
+display:-moz-inline-box; display:inline-block;
+width:400px;
+height:40px;
+font-size:20px;
+color: #f9f9f9;
+}
