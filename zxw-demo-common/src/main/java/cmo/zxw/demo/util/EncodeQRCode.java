@@ -15,6 +15,8 @@ import java.util.EnumMap;
 
 import javax.imageio.ImageIO;
 
+import org.apache.log4j.Logger;
+
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
 import com.google.zxing.MultiFormatWriter;
@@ -25,7 +27,8 @@ import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
  * @author tskk
  * @version 2015-6-26 13:30:20
  * */
-public final class EncodeQRCode { 
+public final class EncodeQRCode {
+	private static final Logger LOGGER =  Logger.getLogger(EncodeQRCode.class);
 	//二维码颜色
 	private static final int BLACK = 0xFF000000;//0xFFFF0000，红色
 	//二维码背景色
@@ -78,7 +81,7 @@ public final class EncodeQRCode {
 				}
 			}
 		}catch(Exception e){
-			System.out.println("生成二维码失败"+e.getMessage());
+			LOGGER.error("二维码写入文件失败", e);
 		}
 		return image;
 	}
@@ -157,7 +160,7 @@ public final class EncodeQRCode {
 			addFontImage(image,topDes,true);
 			ImageIO.write(image, format, file);
 		} catch (IOException e) {
-			System.out.println("二维码写入文件失败"+e.getMessage());
+			LOGGER.error("二维码写入文件失败", e);
 		}
 	}
 	/**
@@ -171,7 +174,7 @@ public final class EncodeQRCode {
 		try {
 			ImageIO.write(image, format, file);
 		} catch (IOException e) {
-			System.out.println("二维码写入文件失败"+e.getMessage());
+			LOGGER.error("二维码写入文件失败", e);
 		}
 	}
 	/**
@@ -189,7 +192,7 @@ public final class EncodeQRCode {
 			insertImage(image,src,true);
 			ImageIO.write(image, format, file);
 		} catch (IOException e) {
-			System.out.println("二维码写入文件失败"+e.getMessage());
+			LOGGER.error("二维码写入文件失败", e);
 		}
 	}
 	/**
@@ -205,7 +208,7 @@ public final class EncodeQRCode {
 			addFontImage(image,bottomDes,false);
 			ImageIO.write(image, format, file);
 		} catch (IOException e) {
-			System.out.println("二维码写入文件失败"+e.getMessage());
+			LOGGER.error("二维码写入文件失败", e);
 		}
 	}
 	/**
@@ -225,7 +228,7 @@ public final class EncodeQRCode {
 			addFontImage(image,bottomDes,false);
 			ImageIO.write(image, format, file);
 		} catch (IOException e) {
-			System.out.println("二维码写入文件失败"+e.getMessage());
+			LOGGER.error("二维码写入文件失败", e);
 		}
 	}
 	/**
@@ -239,7 +242,7 @@ public final class EncodeQRCode {
 		try {
 			ImageIO.write(image, format, stream);
 		} catch (IOException e) {
-			System.out.println("二维码写入流失败"+e.getMessage());
+			LOGGER.error("二维码写入流失败", e);
 		}
 	}
 	

@@ -12,7 +12,7 @@ import org.apache.log4j.Logger;
  * 
  */
 public final class PropertiesUtil {
-Logger logger = Logger.getLogger(PropertiesUtil.class);  
+	private static final Logger LOGGER =  Logger.getLogger(PropertiesUtil.class);
 
 	private static final String BUNDLE_NAME = "config/serviceCore";
 	private static final ResourceBundle RESOURCE_BUNDLE = ResourceBundle
@@ -31,7 +31,7 @@ Logger logger = Logger.getLogger(PropertiesUtil.class);
 		try {
 			return RESOURCE_BUNDLE.getString(key);
 		} catch (MissingResourceException e) {
-			System.out.println("getString is error" +e.getMessage());
+			LOGGER.error("getString is error" ,e);
 			return null;
 		}
 	}

@@ -12,7 +12,6 @@ public class UserAction extends BaseAction {
 	public String getUserAll(){
 		MyInput input  = new MyInput();
 		this.getParams(input);
-		System.out.println("this.is UserAction");
 		return null;
 	}
 

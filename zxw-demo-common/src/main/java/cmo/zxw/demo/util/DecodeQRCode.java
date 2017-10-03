@@ -7,6 +7,8 @@ import java.util.EnumMap;
 
 import javax.imageio.ImageIO;
 
+import org.apache.log4j.Logger;
+
 import com.google.zxing.Binarizer;
 import com.google.zxing.BinaryBitmap;
 import com.google.zxing.DecodeHintType;
@@ -23,6 +25,7 @@ import com.google.zxing.common.HybridBinarizer;
  * 注：此代码，不能解析：L纠错级别带logo和H级别的解析
  * */
 public final class DecodeQRCode {
+	private static final Logger LOGGER =  Logger.getLogger(DecodeQRCode.class);
 	//二维码格式参数
 	private static final EnumMap<DecodeHintType, Object> hints = new EnumMap<DecodeHintType, Object>(DecodeHintType.class);
 	static{
@@ -36,7 +39,7 @@ public final class DecodeQRCode {
 	public static String decodeImg(File imgFile){
 		String content = null;
 		if(!imgFile.isFile()){
-			System.out.println("输入非文件");
+			LOGGER.error("输入非文件");
 			return null;
 		}
 		try {
@@ -47,13 +50,11 @@ public final class DecodeQRCode {
 			MultiFormatReader reader = new MultiFormatReader();
 			Result result = reader.decode(binaryBitmap, hints);
 			content = result.getText();
-//			System.out.println("二维码结果："+":"+result.toString()+"，"+result.getBarcodeFormat()+"，"+result.getText());
+//			LOGGER.info("二维码结果："+":"+result.toString()+"，"+result.getBarcodeFormat()+"，"+result.getText());
 		} catch (NotFoundException e) {
-			System.out.println("二维码解析NotFoundException");
-			e.getMessage();
+			LOGGER.error("DecodeQRCode NotFoundException", e);
 		} catch (IOException e) {
-			System.out.println("二维码解析IOException");
-			e.getMessage();
+			LOGGER.error("DecodeQRCode IOException", e);
 		}
 		return content;
 	}

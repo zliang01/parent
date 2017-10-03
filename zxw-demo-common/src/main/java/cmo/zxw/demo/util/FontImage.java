@@ -154,8 +154,8 @@ public final class FontImage {
 	        }
 	    }
 	 
-	 public static void main(String[] args) throws Exception {
-		 getImage("MAS-123456", 100, 100, "d:/test");
-
-	}
+//	 public static void main(String[] args) throws Exception {
+//		 getImage("MAS-123456", 100, 100, "d:/test");
+//
+//	}
 }
