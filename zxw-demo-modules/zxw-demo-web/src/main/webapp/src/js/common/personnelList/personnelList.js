@@ -12,22 +12,34 @@ require(['list','Util'],function(List,Util){
 	//搜索方法
 	var perListbtnSearch = function (){
 		var result = getForm();
+		var param={
+				service:"queryExamineeService",
+				method:"queryExamineeInfo",
+				page:"10",
+				params:JSON.stringify(result)
+		}
 		$("#perListTable").dataTable({
 	        debug: true,
 	        check: true,
 	        pageCapacity:10,
-	        dataForm:result,
+	        dataForm:param,
 	        loading:true,
 	        oddEven:true,
-	        url: "../../../front/sh/common!execute?uid=login",
+	        url: "/zxw-demo-web/commonAction!execute.action",
 	        style: {"font-size": "12px", "width": ""},
 	        align:"center",
 	        ButtonStyle:{fontColor:"#ffffff",backgroundColor:"#10AA9C"},
 	        columns: [
-	            {ColumnName: "staffId", title: "员工编号", width: ""},
-	            {ColumnName: "staffName", title: "员工姓名", width: ""},//设置img:true,后台数据反回url这一列就生成图片显示
-	            {ColumnName: "url", img:true,title: "员工头像", width: ""},
-	            {ColumnName: "staffOrg", title: "员工部门", width: ""},
+	            {ColumnName: "number", title: "序号", width: ""},
+	            {ColumnName: "code", title: "编码", width: ""},//设置img:true,后台数据反回url这一列就生成图片显示
+	            {ColumnName: "company",title: "单位", width: ""},
+	            {ColumnName: "name", title: "姓名", width: ""},
+	            {ColumnName: "sex", title: "性别", width: ""},	       
+	            {ColumnName: "idCard",title: "身份证", width: ""},
+	            {ColumnName: "examineeJob", title: "职务", width: ""},
+	            {ColumnName: "workType",title: "工种", width: ""},
+	            {ColumnName: "applySubject", title: "报考科目", width: ""},
+	            {ColumnName: "applySubjectCode", title: "科目编码", width: ""},
 	           /* {title: "查看", button: "show", buttonName: "查看", width: 50},*/
 	            {title: "编辑", button: "edit", buttonName: "编辑", width: "50"},
 	            {title: "删除", button: "del", buttonName: "删除", width: "50"}
@@ -70,7 +82,7 @@ require(['list','Util'],function(List,Util){
 			 height:218  //对话框高度
 		});*/
 		var $form = $('#perListContent form');
-		var result = Util.form.serialize($form);
+		var result = Util.form_amd.serialize($form);
 		return result;
 	}
 	$(function() {

@@ -15,7 +15,6 @@
 
     <modules>
      <module>zxw-demo-web</module>
-    <module>win10view</module>
   </modules>
 
     <dependencies>

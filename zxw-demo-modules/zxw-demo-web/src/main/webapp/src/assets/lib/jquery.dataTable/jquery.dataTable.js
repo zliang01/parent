@@ -177,14 +177,14 @@ var GetJSONData = {};
             var dataForm = Object.dataForm;
             
             var data = {
-            		'page': page,
+            		'page': (page-1)*pageCapacity,
                     'pageCapacity': pageCapacity 
             };
-            $.extend(data,dataForm);
+            $.extend(dataForm,data);
             
             $.ajax({
                 /*根据URL拉取数据,初次拉取创建*/
-                data:data,  
+                data:dataForm,  
 	            type:'post',  
 	            cache:false,  
 	            dataType:'json',
@@ -739,14 +739,14 @@ var GetJSONData = {};
         debugger;
         var dataForm = Object.dataForm;
         var data = {
-        		'page': page,
+        		'page': (page-1)*pageCapacity,
                 'pageCapacity': pageCapacity 
         };
-        $.extend(data,dataForm);
+        $.extend(dataForm,data);
         $.ajax({
             /*根据URL拉取数据,更新表格*/
             url: Object.url,
-            data:data,  
+            data:dataForm,  
             type:'post',  
             cache:false,  
             dataType:'json',

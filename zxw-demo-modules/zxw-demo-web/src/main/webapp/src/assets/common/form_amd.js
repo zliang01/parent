@@ -7,6 +7,7 @@ define(['jquery'],function(){
 
     var config = {
         serialize:function($form){
+        	debugger;
             var arr = $form.serializeArray();
             var obj = {}
             $.each(arr, function(item, i){

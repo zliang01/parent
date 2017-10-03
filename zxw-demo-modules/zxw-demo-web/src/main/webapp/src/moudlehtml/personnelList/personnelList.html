@@ -2,49 +2,89 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>通讯录</title>
+<title>人员管理</title>
 <link rel="stylesheet" href="../../css/list.css" type="text/css"/>
 </head>
 <body>
 <!-- content -->
 <div id = "perListContent">
-<div class="current"><span>个人桌面</span><span> > </span> <span>基础信息</span><span>></span>组织机构</div>
+<div class="current">
 <div>
 	<form id="searchForm" name="searchForm">
 		<div class="t-list-search t-columns-4">
 			<ul class="t-columns-group">
                <li>
-                   <label for="staffId">
-                      员工编号
+                   <label for="code">
+                      编号
                    </label>
                    <div>
-                       <input id="staffId" name="staffId" type="text">
+                       <input id="code" name="code" type="text">
                    </div>
                </li>
                <li>
-            <label for="staffName">
-                员工姓名
-            </label>
-            <div>
-                <input id="staffName" name="staffName" type="text">
-            </div>
-        </li>
-                     <li>
-            <label for="staffURL">
-               头像
-            </label>
-            <div>
-                <input id="staffURL" name="staffURL" type="text">
-            </div>
-        </li>
-                     <li>
-            <label for="staffOrg">
-                组织
-            </label>
-            <div>
-                <input id="staffOrg" name="staffOrg" type="text">
-            </div>
-        </li>
+                   <label for="company">
+                     单位
+                   </label>
+                   <div>
+                       <input id="company" name="company" type="text">
+                   </div>
+               </li> 
+               <li>
+                   <label for="name">
+                    姓名
+                   </label>
+                   <div>
+                       <input id="name" name="name" type="text">
+                   </div>
+               </li>
+               <li>
+                   <label for="idCard">
+                    身份证
+                   </label>
+                   <div>
+                       <input id="idCard" name="idCard" type="text">
+                   </div>
+               </li>
+               <li>
+                   <label for="examineeJob">
+                    职务
+                   </label>
+                   <div>
+                       <input id="examineeJob" name="examineeJob" type="text">
+                   </div>
+               </li>
+                <li>
+                   <label for="workType">
+                    工种
+                   </label>
+                   <div>
+                       <select>
+                      	 <option value="0"></option>
+						  <option value="1">货车检车员</option>
+						  <option value="2">列检值班员</option>
+						  <option value="3">动态检车员（TFDS)</option>
+						  <option value="4">铁路车辆钳工（车辆站修）</option>
+						   <option value="5">铁路机车车辆制动钳工（车辆站修</option>
+						  <option value="6">焊工（车辆站修）</option>
+						</select>
+                   </div>
+               </li>
+                <li>
+                   <label for="applySubject">
+                    报考科目
+                   </label>
+                   <div>
+                       <input id="applySubject" name="applySubject" type="text">
+                   </div>
+               </li>
+                <li>
+                   <label for="applySubjectCode">
+                    科目编码
+                   </label>
+                   <div>
+                       <input id="applySubjectCode" name="applySubjectCode" type="text">
+                   </div>
+               </li>
         
 			</ul>
 		</div>
