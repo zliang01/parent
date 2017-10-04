@@ -39,7 +39,7 @@ define(['assets/common/ajax_amd','jquery1'],function(ajax,Jquery1){
 		};
 		ajax.postJson('/zxw-web/front/sh/login!index?uid=login01',param,function(result,status){
 		if(result.returnCode=="0000"){
-			window.location.href="/zxw-web/index.html";
+			window.location.href="/zxw-demo-web/index.html";
 		}else{
 			alert("登陆异常，请重新登陆:"+result.returnMessage);
 		}

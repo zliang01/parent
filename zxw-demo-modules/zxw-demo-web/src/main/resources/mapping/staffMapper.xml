@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zxw.demo.dao.common.IStaffInfoDaoService" >
+  <select id="queryStaffInfo" resultType="java.util.Map"  parameterType="java.util.Map" >
+		SELECT s.*,r.roleName FROM `staff_info`  s, `role` r WHERE s.roleId=r.roleId 
+			<if test="staffId != '' and staffId !=null" >    		
+					and  s.staffId = ${staffId}
+	    	</if>
+	    	<if test="staffName != '' and staffName !=null" >    		
+					and  s.staffName LIKE CONCAT('%','${staffName}','%' ) 
+	    	</if>
+	    	<if test="staffEmployee != '' and staffEmployee !=null" >    		
+					and  s.staffEmployee LIKE CONCAT('%','${staffEmployee}','%' ) 
+	    	</if>
+	    	<if test="roleName != '' and roleName !=null" >    		
+					and  r.roleId =(select roleId from  role where roleName LIKE CONCAT('%','${roleName}','%' ))
+	    	</if>
+			<if test="page != null and pageCapacity !=null" >    		
+				LIMIT #{page}, #{pageCapacity}
+    	    </if>
+  </select>
+  
+    <select id="queryStaffInfoTotal" resultType="java.lang.Integer"  parameterType="java.util.Map" >
+		SELECT count(*) as total From `staff_info`  s, `role` r WHERE s.roleId=r.roleId 
+			<if test="staffId != '' and staffId !=null" >    		
+					and  s.staffId = ${staffId}
+	    	</if>
+	    	<if test="staffName != '' and staffName !=null" >    		
+					and  s.staffName LIKE CONCAT('%','${staffName}','%' ) 
+	    	</if>
+	    	<if test="staffEmployee != '' and staffEmployee !=null" >    		
+					and  s.staffEmployee LIKE CONCAT('%','${staffEmployee}','%' ) 
+	    	</if>
+	    	<if test="roleName != '' and roleName !=null" >    		
+					and  r.roleId =(select roleId from  role where roleName LIKE CONCAT('%','${roleName}','%' ))
+	    	</if>
+  </select>
+		  <!-- 删除用户(Remove) --> 
+  <delete id="delStaffById"  parameterType="java.util.Map"> 
+		DELETE FROM `staff_info` WHERE staffId = #{staffId}
+  </delete> 
+<update id="editStaffById" parameterType="java.util.Map" >  
+    UPDATE `staff_info`
+    <set> 
+      <if test="staffName != null" >  
+        staffName = #{staffName},
+      </if>
+      <if test="staffEmployee != null" >  
+        staffEmployee = #{staffEmployee},
+      </if>
+       <if test="roleName != null" >  
+        roleId = (select roleId from  role where roleName = #{roleName})
+      </if>
+    </set>  
+    where staffId = ${staffId}
+  </update>
+  <!-- 新增人员信息 -->
+    <insert id="addStaffInfo" parameterType="java.util.Map">
+    insert into `staff_info` (`staffId`, `staffName`, `staffEmployee`, `password`, `salt`) 
+    values (#{staffId},#{staffName},#{staffEmployee},#{password},#{salt})
+   </insert>
+</mapper>

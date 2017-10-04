@@ -60,7 +60,23 @@
 				<artifactId>mybatis</artifactId>
 				<version>3.3.0</version>
 			</dependency>
+<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+			<dependency>
+			    <groupId>org.apache.poi</groupId>
+			    <artifactId>poi</artifactId>
+			    <version>3.9</version>
+			</dependency>
 
+			<dependency>
+			    <groupId>org.apache.poi</groupId>
+			    <artifactId>openxml4j</artifactId>
+			    <version>1.0-beta</version>
+			</dependency>
+			<dependency>
+			    <groupId>org.apache.poi</groupId>
+			    <artifactId>poi-ooxml</artifactId>
+			    <version>3.9</version>
+			</dependency>
 			<!-- mysql连接驱动 -->
 			<dependency>
 				<groupId>mysql</groupId>
@@ -181,6 +197,13 @@
 				<artifactId>jstl</artifactId>
 				<version>1.2</version>
 			</dependency>
+		 <!-- shiro&zxw依赖 -->
+		<dependency>
+           <groupId>org.apache.shiro</groupId>
+           <artifactId>shiro-all</artifactId>
+           <version>1.2.4</version>
+       </dependency>
+       <!-- shiro&zxw依赖 -->	
 			
 			<dependency>
 			<groupId>org.apache.struts</groupId>

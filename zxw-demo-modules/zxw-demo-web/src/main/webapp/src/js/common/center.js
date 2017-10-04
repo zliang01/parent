@@ -23,6 +23,8 @@ require(['jquery1',
 			for(var i=0;i<result.beans.length;i++){
 				switch(result.beans[i].menutype){
 				case "0":
+					if(result.beans[i].menuname=="人员管理"){
+					};
 					mainMenus.push('<li><p>'+result.beans[i].menuname+'</p><a href="#" onclick="parent.addTab(\''+result.beans[i].menuurl+'\',\''+result.beans[i].menuname+'\')"><img src="'+result.beans[i].menuico+'" width="'+result.beans[i].icowidth+'" height="'+result.beans[i].icoheight+'" /></a></li>');
 					break;
 				case "1":
