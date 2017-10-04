@@ -1,0 +1,308 @@
+@charset "UTF-8";
+
+/* 以下样式文件会不定期更新及覆盖。不可修改! 不可修改!! 不可修改!!!
+/* 新增或修改的样式，请添加到 service-outer.css 文件。
+/* 有任何问题请联系 tianwf@asiainfo.com 
+/* --------------------------------------------------------  */
+
+/* 重置 */
+@import url(ng-common/ng-reset.css);
+
+/* 公用 */
+@import url(ng-common/ng-common.css);
+
+/* 组件 */
+@import url(ng-common/ng-components.css);
+
+/* 矢量字体图标 */
+@import url(ng-common/ng-icfont/ng-icfont.css);
+
+/* 重置九个icon图标    2017.05.12 */
+@import url(ng-common/ng-icfont/icon-reset.css);
+/* 新增或修改 */
+@import url(service-outer.css);
+
+/* 服务请求业务页面样式，不可修改! 
+/* --------------------------------------------------------  */
+
+.overflow-auto { overflow: auto;}
+
+.sector-list:after { clear: both; display:block; visibility: hidden; height: 0; content: " "; }
+
+.service-top-search input, .t-layout-lefttop input, .t-sendorder .t-table input, .alarm-config input, .order-setting-table td input { height: 30px; line-height: 18px\9; text-indent: 2px; background: #FFF; box-sizing: border-box; outline: none; border: 1px solid #d0d6d9; -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); }
+.service-top-search input[type="checkbox"], .service-top-search input[type="radio"],.t-free-form input[type="checkbox"], .t-free-form input[type="radio"] { height: auto; border: none; -webkit-box-shadow: none; box-shadow: none; }
+
+.t-layout-lefttop select, .order-sector-top select, .t-free-form select, .my-workorder-co1 select { appearance:none; -moz-appearance:none; -webkit-appearance:none; border-radius: 0; height: 30px; box-sizing: border-box; border: 1px solid #DDD; padding: 3px; background:#FFF url(ng-common/img/mini-icons.png) no-repeat right -57px;}
+.t-layout-lefttop select option, .order-sector-top select option, .t-free-form select option, .my-workorder-co1 select option { line-height: 18px;}
+
+/* 投诉监控 */
+.service-top-search { height: 42px; line-height: 42px; padding-left: 20px; }
+.service-top-search span, .service-top-search a, .service-top-search label, .service-top-search input, .service-top-search div { float: left; margin-left: 12px; }
+.service-top-search input[type="radio"] { margin-top: 14px; }
+.service-top-search input[type="text"] { margin-top: 5px; }
+.service-top-search .t-btn { margin-top: 5px; }
+
+.color-red td { color: #e80000; }
+.to-up, .to-dw { font-style: normal; padding-right: 2px; }
+.to-up { color: #e80000; }
+.to-dw { color: #2caa00; }
+
+/* 申告类型管理 */
+.t-layout-lefttop select { margin-left: 10px; margin-top: 7px; margin-right: 10px; }
+
+.t-layout-lefttop input { margin-top: 5px; margin-left: 10px; }
+.t-columns-group > li div input[type="checkbox"], .t-columns-group > li div input[type="radio"] { margin-top: 14px; }
+.t-columns-group > li div label { margin-right: 12px; }
+
+/* 申告类型树-页面 */
+.typetree-btns { margin-top: 20px; margin-bottom: 0; }
+.typetree-btns .t-panel-content { padding: 0; }
+.typetree-btns .t-panel-content .t-list-bottom-btns { border-top: none; text-align: center; }
+
+/* 选择来访目的 & 服务类型选择 */
+.t-type-select .t-layout-lefttop { border-top: none; }
+
+.t-type-select .t-layout-left { top: 47px; }
+.t-type-select .t-layout-leftinner { top: 0; }
+.t-type-select .t-layout-right { top: 46px; }
+.t-type-select .type-select-number { height: 46px; line-height: 46px; float: left; margin-left: 12px; margin-right: 12px; color: #999; }
+.t-type-select .type-select-number b { font-size: 14px; color: #222; }
+.t-type-select .type-select-number span { color: #333; }
+.t-type-select .type-select-search { width: 300px; float: right; position: relative; }
+.t-type-select .type-select-search a { display: block; width: 20px; height: 46px; text-align: center; position: absolute; top: 0; right: 10px; }
+
+.t-type-select .textarea-info { float: right; line-height: 20px; width: 99%; border: none; overflow: auto; outline: none; resize: none; }
+
+.full-path-node {margin-bottom: 15px; }
+.full-path-node li { line-height: 20px; padding: 3px 0;}
+
+.t-nodetree dl { display: block; width: 100%; float: left; padding: 0; margin: 0 0 6px 0; }
+.t-nodetree dl dt { width: 100%; float: left; padding: 2px 0; margin-bottom: 4px; font-size: 12px; color: #222; }
+.t-nodetree dl dt i { font-size: 10px; line-height: 24px; display: inline-block; color: #666; padding-left: 2px; padding-right: 4px; }
+.t-nodetree dl dd { width: 44%; height: 22px; margin: 0; padding-left: 6%; float: left; font-size: 12px; color: #777; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.t-nodetree-columns-3 dl dd { width: 29%; padding-left: 4.33%; }
+.t-nodetree-columns-4 dl dd { width: 21%; padding-left: 4%; }
+
+/* 当天话务记录 */
+.call-records { width: 100%; margin-top: 15px; border-collapse: collapse; }
+.call-records tr td {  border: 1px solid #d0d6d9; vertical-align: top; }
+.call-records .call-records-left { width: 220px; }
+.call-records .call-records-left .t-layout-lefttop { border-top: none; }
+.call-records .call-records-right { position: relative; padding-bottom: 70px; }
+.call-records .call-records-right .t-subtitle{ margin: 10px; }
+.call-records .call-records-right .t-columns-4 { position: absolute; bottom: 0; left: 0; right: 0; }
+
+
+/* 派单部门 & 人员管理 */
+.order-sector-top { width: 100%; height: 40px; margin-bottom: 10px; }
+.order-sector-top p { display: inline-block; line-height: 40px; color: #666; padding-left: 12px; }
+.order-sector { width: 100%; border-collapse: collapse; }
+.order-sector tr td {  vertical-align: top;}
+.order-sector-left { border-left: 1px solid #d0d6d9; border-bottom: 1px solid #d0d6d9; }
+.order-sector-left { width: 300px; }
+.order-sector-tree { padding: 10px; }
+.order-sector tr td.order-sector-btns { width: 50px; border-left: 1px solid #d0d6d9; vertical-align: middle; text-align: center; }
+.order-sector tr td.order-sector-btns a { display: block; width: 30px; height: 40px; margin: 10px; line-height: 40px; border: 1px solid #0085d0; border-radius: 3px; background: #fff; text-decoration: none; cursor: pointer; outline: none; color: #0085d0; font-size: 16px; }
+.order-sector tr td.order-sector-btns a:hover { background: #e5f3fa; }
+.order-sector tr td.order-sector-btns a:active { background: #eaeef1; }
+
+.order-sector-right { border: 1px solid #d0d6d9; }
+.order-sector-title { height: 45px; line-height: 45px; padding: 0 10px; border-bottom: 1px solid #d0d6d9; }
+.order-sector-title h3 { display: inline-block; font-weight: normal; font-size: 12px; color: #222;}
+.order-sector-title p { display: inline-block; float: right; text-align: left;}
+
+.order-sector-content { padding: 10px; }
+.order-sector-tree, .order-sector-content { width: 100%; box-sizing: border-box; overflow: auto; }
+
+.order-sector-headline { height: 45px; line-height: 45px; padding: 0 10px; border-top: 1px solid #d0d6d9; }
+.order-sector-headline p { display: inline; float: right; }
+
+/* 人员管理 */
+.order-sector-left.member-manage { width: 260px;}
+.order-sector-left.member-manage .order-sector-tree { width: 240px;}
+.order-sector-right.member-manage { border: none; border-left: 1px solid #d0d6d9; }
+.member-manage .t-panel { margin-left: 15px; }
+.no-mgb { margin-bottom: 0; }
+.sector-list { margin: 15px 0; }
+.sector-list label { display: block; width: 100%; height: 24px; line-height: 24px; margin-top: 4px; }
+.sector-list.sector-columns-2 { margin: 10px 0; }
+.sector-list.sector-columns-2 label { width: 50%; float: left; }
+
+/* 我的工单 */
+.my-workorder-left .my-workorder-left-title { height: 38px; line-height: 38px; border-top: 1px solid #d0d6d9; text-indent: 10px; }
+.my-workorder-left .my-workorder-left-title em { color: red; padding: 0 6px 0 2px; font-style: normal; }
+.my-workorder-left .t-tabs .t-tabs-items > li { margin-right: 8px; }
+.my-workorder-left .t-tabs .t-tabs-items > li a { margin-left: 10px; }
+.my-workorder-left .t-layout-leftinner { padding: 10px 0; top: 85px; }
+
+.my-workorder-left .t-layout-lefttop { position: relative;}
+.my-workorder-left .t-layout-lefttop a { display: block; width: 20px; height: 46px; text-align: center; position: absolute; top: 0; right: 10px; }
+
+
+.my-workorder-right .t-panel-no-title { margin-top: 0; }
+
+.my-workorder-right .t-panel.only-paddingtop .t-panel-content { padding: 10px 0 0 0; }
+.my-workorder-right .t-panel.clean-padding .t-panel-content { padding: 0; }
+.my-workorder-right .right-link { float: right !important; }
+.my-workorder-right .right-link a { color: #0085d0 !important; text-decoration: none; border-color: transparent !important; }
+.my-workorder-right .right-link a:hover { color: #1a91d4 !important; }
+.my-workorder-right .right-link a:active { color: #0077ba !important; }
+
+
+.my-workorder-right .t-panel-content .table-half { width: 100%; margin-top: 15px; border-collapse: collapse; }
+.my-workorder-right .t-panel-content .table-half tr td {  width: 50%; vertical-align: top; }
+
+.my-workorder-right .t-panel-content .table-half tr td .t-table td { width: auto; vertical-align: middle; }
+
+.my-workorder-right .t-panel-content .table-half .t-panel,.my-workorder-right .t-panel-content .table-half .t-columns-2{ padding: 0 15px 15px 15px; }
+
+.my-workorder-right .t-panel-content .duty-list { list-style: none; }
+.my-workorder-right .t-panel-content .duty-list:after { clear: both; display:block; visibility: hidden; height: 0; content: " "; }
+.my-workorder-right .t-panel-content .duty-list li { float: left; width: 33.33%; height: 26px; line-height: 26px; }
+.text-prompt { color: #999; margin: 0; padding: 0; line-height: 20px !important; }
+
+.my-workorder-right .t-panel { margin-bottom: 15px; }
+.my-workorder-right .t-panel-content .t-panel-content-inner { padding: 10px; }
+.my-workorder-right .t-panel-title { padding: 0 10px;}
+
+.my-workorder-right .width-all div label { line-height: 42px; }
+
+.my-workorder-btn { padding-left: 2%; }
+
+.my-workorder-area { width: 100%; position: relative; overflow: auto; }
+
+.my-workorder-co1 { height: 40px; padding: 10px; color: #666; }
+.my-workorder-co1 select { width: 120px; }
+
+/* 工单状态展示 */
+.my-workorder-co2 { padding: 0 10px; }
+.my-workorder-co2 li { height: 26px; line-height: 26px; }
+.my-workorder-co2 li a { display: block; color: #222; text-decoration: none; }
+.my-workorder-co2 li a:hover { color: #0085d0; }
+.my-workorder-co2 li a i { color: #0085d0; padding-right: 4px; }
+.my-workorder-co2 li a em { color: #999; padding-left: 6px; font-style: normal; }
+
+/* 工单状态底部按钮区域 */
+.my-workorder-co3 { height: 24px; margin: 6px 0 16px 0; padding: 10px 0; text-align: center; border-top: 1px solid #d0d6d9; }
+
+.order-guide { width: 100%; font-size: 12px; margin-bottom: -1px; border-collapse: collapse; border-spacing: 0; }
+.order-guide tr td { padding: 8px; border: 1px solid #d0d6d9; line-height: 20px; word-break: break-all; word-wrap: break-word; }
+.order-guide tr td.text-vertical { writing-mode: lr-tb; width: 12px; background: #e8eff2; word-break: break-word; text-align: center; }
+
+.accessory-content { padding: 10px; }
+.accessory-content .t-panel-content { padding: 15px !important; }
+
+.my-workorder-form { margin-bottom: 15px; }
+.my-workorder-form .t-columns-1 .t-columns-group > li > label { width: 30%; }
+.my-workorder-form .t-columns-1 .t-columns-group > li > div { width: 60%; }
+.my-workorder-form .t-columns-2 .t-columns-group > li > label { width: 26%; }
+.my-workorder-form .t-columns-2 .t-columns-group > li > div { width: 60%; }
+.my-workorder-form .t-columns-2 .t-columns-group > li.width-all > label { width: 13%; }
+.my-workorder-form .t-columns-2 .t-columns-group > li.width-all > div { width: 80%; margin-left: 1%; }
+
+/* 历史工单用到了 */
+.order-box-half { width: 50%; float: left; }
+.order-box-half .t-panel { margin-bottom: 0; }
+.t-panel-content textarea { padding:3px 0; width:100%; box-sizing:border-box;outline: none;border: 1px solid #d0d6d9;-webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);resize:none; }
+.t-panel-content textarea { line-height: 22px; }
+
+/* 派单通知 */
+.t-sendorder .t-table { margin: 0 2% 20px 2%; width: 96%;}
+.t-sendorder .t-table textarea { padding: 3px;resize:none;outline:none;border:1px solid #d0d6d9;-webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); width:96%;}
+.t-sendorder-wrapper { padding: 15px; margin-bottom: 15px; border: 1px solid #d0d6d9; }
+.t-sendorder-box { padding:0 20px; width:70%; }
+.t-sendorder-upgrade { width:95%; padding:0 2%;}
+.t-free-form textarea { padding:3px 0; width:100%; box-sizing:border-box;outline: none;border: 1px solid #d0d6d9;-webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);resize:none;height: 100px;}
+.query_crity{ padding-left:100px;}
+.phase_notice{ padding-left:200px;}
+
+/* 自动派单 */
+.send-depart-lefttitle { text-align: left !important; text-indent: 15px; }
+.send-depart { padding: 15px; }
+.send-depart label{ padding-right:20px; display:inline-block; line-height: 26px;}
+
+/* 批量工单模板配置 */
+.table-half { width: 100%; border-collapse: collapse; }
+.t-layout-half:after { clear: both; display:block; visibility: hidden; height: 0; content: " "; }
+.table-half .table-half-td {  width: 50%; }
+.t-layout-half .t-layout-half-content { width:50%; float:left; }
+
+/* 告警配置 */
+.alarm-config-space { padding-left: 36px; }
+.bg-white,.bg-white:hover { background: white !important;}
+.t-sendorder .t-panel, .t-sendorder .t-columns-4 { margin: 0 2% 20px 2%; width: 96%;}
+
+/* 首次回复配置 */
+.reply-setting-list { padding-left: 20px; padding-bottom: 10px; margin-top: -10px; }
+.reply-setting-list label { height: 26px; line-height: 26px; padding-right: 20px; }
+.reply-setting-filter .order-sector-left, .reply-setting-filter .order-sector-btns, .reply-setting-filter .order-sector-right { border: none !important; }
+.reply-setting-filter .order-sector-tree, .reply-setting-filter .order-sector-content { padding: 0 10px; }
+
+/* 类型配置 */
+.type-config-wrap { padding: 0; }
+.type-config-top { height: 240px; overflow: auto; }
+.type-config-bottom { position: absolute; left: 0; bottom: 0; right: 0; top: 240px; }
+.type-config-bottom .left-title { border-top: 1px solid #d0d6d9; }
+.type-config-bottom-inner { position: absolute; left: 0; bottom: 0; right: 0; top: 41px; overflow: auto; padding: 10px; }
+.type-config-bottom-inner label { display: block; height: 26px; line-height: 26px; }
+
+/* 工单监控 */
+.order-monitor { width: 50%; height: 400px; float: left;}
+.order-monitor .t-panel { margin: 0 8px;}
+.order-monitor .t-panel-content { height: 330px; padding: 0; overflow: auto; }
+.order-monitor select { margin-left: 6px; }
+
+.order-monitor-totalinfo { height: 20px; background: #f7f9fa; line-height: 20px; padding: 6px 12px; }
+.order-monitor .t-panel-content.order-monitor-table { height: 310px; padding: 10px; }
+.order-monitor .t-panel-content.order-monitor-table .t-list-search { border: none; }
+
+.order-monitor-fullscreen { width: 100%; position: relative; }
+.order-monitor-fullscreen .order-monitor { width: 100%; background: #FFF; float: none; position: absolute; left: 0; top: 0; }
+.order-monitor-fullscreen .order-monitor .t-panel { margin: 0 8px; }
+.order-monitor-fullscreen .order-monitor .t-panel-content { height: 730px; background: #FFF; }
+
+/* 工单监控-设置信息-弹出层 */
+.order-setting-layer { display: none; width:100%; position: absolute; top: 50px; right: 0; z-index: 10000; text-align: left; border: 1px solid #DDD; background: #fff; -webkit-box-shadow: 1px 1px 3px #999; box-shadow: 1px 1px 3px #999;}
+.order-setting-layer:after { content: ""; display: block; width: 0; height: 0; position: absolute; right: 36px; top: -20px; border-top: 10px solid transparent; border-right: 10px solid transparent; border-bottom: 10px solid #FFF; border-left: 10px solid transparent; }
+.order-setting-layer:before { content: ""; display: block; width: 0; height: 0; position: absolute; right: 36px; top: -21px; border-top: 10px solid transparent; border-right: 10px solid transparent; border-bottom: 10px solid #DDD; border-left: 10px solid transparent; }
+
+.order-setting-layer .order-setting-content { padding-top: 24px; }
+.order-setting-layer .order-setting-content .t-free-form { font-size: 12px; padding-left: 70px; }
+.order-setting-layer .order-setting-content .t-free-form > span { margin-left: -70px; padding-left: 0;}
+.order-setting-layer .order-setting-contt .t-free-form > p { margin-right: 70px; }
+.order-setting-layer .order-setting-content .t-free-form > p label { display: inline-block; margin-right: 6px; }
+
+.order-setting-table { width: 96%; margin: 2%; margin-top: -16px; font-size: 12px; border-collapse: collapse; border-spacing: 0; }
+.order-setting-table td { border-bottom: 1px solid #E8E8E8; }
+
+.order-setting-table .ost-title { width: 22%; text-align: right; color: #999; }
+.order-setting-table .ost-con { width: 26%; padding-left: 2%; text-align: left; }
+
+/* 外层容器控制内部tab组件表现 20170119 by tony */
+.my-workorder-left .sn-tab .sn-tab-items > li { margin-right: 8px; }
+.my-workorder-left .sn-tab .sn-tab-items > li a { margin-left: 10px; }
+
+/* 告警查询及处理 */
+.has-icon-and-link { position: absolute; height: 26px !important; line-height: 26px !important; right: 24px; top: 6px; }
+.has-icon-and-link a:after {  content: "|"; color: #DDD; padding-left: 6px; }
+.goback { height: 24px; line-height: 24px; margin-bottom: 10px; }
+
+/* 列表信息显示 */
+.t-columns-dis > li { height: 32px; }
+.t-columns-dis > li > label, .t-columns-dis > li > div { height: 32px; line-height: 32px; }
+.t-columns-dis > li.width-all { height: auto!important; }
+.t-columns-dis > li.width-all > div { height: auto!important; padding: 4px 0; line-height: 24px; word-break: break-all;  }
+
+/* 来电原因配置 */
+.call-reason-config { margin-top: 0 !important; }
+.call-reason-config .call-records-left { overflow: auto; }
+.call-reason-config .call-records-right { padding-bottom: 58px !important; }
+.call-reason-config .call-records-right .t-subtitle { margin: 0; height: 46px; line-height: 46px; background: #f8f9fb; border-bottom: 1px solid #eaeef1; text-indent: 12px; }
+.call-reason-config-inner { padding: 15px; border-bottom: 1px solid #eaeef1; max-height: 260px; overflow: auto; }
+.call-reason-config-inner .full-path-node { margin-bottom: 0; }
+.call-reason-config .t-columns-4 .t-columns-group > li label { display: none; }
+.call-reason-config .t-columns-4 .t-columns-group > li div { width: 100%; text-align: center; }
+
+/* 2017516-weiru新增样式 */
+.nopadding-content .t-panel-content { padding: 0; }

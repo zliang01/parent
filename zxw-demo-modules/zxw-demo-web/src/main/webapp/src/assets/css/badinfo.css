@@ -1,0 +1,37 @@
+
+
+/* 重置 */
+@import url(ng-common/ng-reset.css);
+
+/* 公用 */
+@import url(ng-common/ng-common.css);
+
+/* 组件 */
+@import url(ng-common/ng-components.css);
+
+/* 矢量字体图标 */
+@import url(ng-common/ng-icfont/ng-icfont.css);
+
+/* 新增或修改 */
+@import url(badinfo-outer.css);
+
+/* 不良信息业务页面样式，不可修改! 
+/* --------------------------------------------------------  */
+
+.t-columns-group > li > div select.wpct48 { width: 48%;}
+.t-columns-group > li > div select.fn-right { float: right;}
+.t-columns-group > li div input[type="checkbox"], .t-columns-group > li div input[type="radio"] { margin-top: 14px; }
+.t-columns-group > li div label { margin-right: 12px; }
+
+/* 举报处理及查询 */
+.batch-layer { width: 300px; }
+.batch-layer .t-columns-1 .t-columns-group { padding-right: 2%; }
+.batch-layer .t-columns-1 .t-columns-group > li > label { width: 30%; }
+.batch-layer .t-columns-1 .t-columns-group > li > div { width: 68%; }
+
+/* 白名单管理-白名单查询 */
+.white-list-table .t-table { margin-top: 15px; }
+
+/* 涉案拓展封号 */
+.close-num { padding-top: 10px; }
+.close-num .t-list-search { border: none; }

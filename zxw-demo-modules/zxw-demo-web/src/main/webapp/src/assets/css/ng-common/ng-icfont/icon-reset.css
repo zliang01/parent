@@ -1,0 +1,124 @@
+.t-panel-title-links a:hover .iconfont {
+	background-position-y: -20px;
+}
+
+.t-panel-title-links a:active .iconfont {
+	background-position-y: -40px;
+}
+
+.t-panel-title-links a .icon-8:before {
+	font-size: 0;
+	content: "";
+}
+
+.t-panel-title-links a .icon-chartbar:before {
+	font-size: 0;
+	content: "";
+}
+
+.t-panel-title-links a .icon-xiazai:before {
+	font-size: 0;
+	content: "";
+}
+
+.t-panel-title-links a .icon-jinzhi3:before {
+	font-size: 0;
+	content: "";
+}
+
+.t-panel-title-links a .icon-shuaxin:before {
+	font-size: 0;
+	content: "";
+}
+
+.t-panel-title-links a .icon-msnui-list-square:before {
+	font-size: 0;
+	content: "";
+}
+
+.t-layout-lefttop a .icon-search:before {
+	font-size: 0;
+	content: "";
+}
+
+.list-form-links a .icon-iconfonthuchudianhuatianchong:before {
+	font-size: 0;
+	content: "";
+}
+
+.list-form-links a .icon-bodadianhua:before {
+	font-size: 0;
+	content: "";
+}
+
+.t-panel-title-links  a .icon-8 {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	vertical-align: text-bottom;
+	background: url(../img/iconfont_bg.png) 0 0 no-repeat;
+}
+
+.t-panel-title-links a .icon-chartbar {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	vertical-align: text-bottom;
+	background: url(../img/iconfont_bg.png) -20px 0 no-repeat;
+}
+
+.t-panel-title-links a .icon-xiazai {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	vertical-align: text-bottom;
+	background: url(../img/iconfont_bg.png) -40px 0 no-repeat;
+}
+
+.t-panel-title-links a .icon-jinzhi3 {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	vertical-align: text-bottom;
+	background: url(../img/iconfont_bg.png) -60px 0 no-repeat;
+}
+
+.t-panel-title-links a .icon-shuaxin {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	vertical-align: text-bottom;
+	background: url(../img/iconfont_bg.png) -80px 0 no-repeat;
+}
+
+.t-panel-title-links a .icon-msnui-list-square {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	vertical-align: text-bottom;
+	background: url(../img/iconfont_bg.png) -100px 0 no-repeat;
+}
+
+.list-form-links a .icon-iconfonthuchudianhuatianchong {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	vertical-align: text-bottom;
+	background: url(../img/iconfont_bg.png) -120px 0 no-repeat;
+}
+
+.list-form-links a .icon-bodadianhua {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	vertical-align: text-bottom;
+	background: url(../img/iconfont_bg.png) -140px 0 no-repeat;
+}
+
+.t-layout-lefttop a .icon-search {
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	vertical-align: text-bottom;
+	background: url(../img/iconfont_bg.png) -160px 0 no-repeat;
+}

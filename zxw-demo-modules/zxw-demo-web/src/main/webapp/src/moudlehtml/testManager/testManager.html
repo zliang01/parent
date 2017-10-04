@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<link rel="stylesheet" type="text/css" href="../../assets/css/service.css">
+
+<title>试卷管理</title>
+</head>
+<body>
+
+
+	<div class="t-layout">
+		<div class="t-layout-all">
+			<form id="queryForm" name="queryForm">
+				<input type="hidden" id="autoCopyTempContent"/>
+				<div class="t-panel only-paddingtop">
+					<div class="t-panel-content">
+
+						<div class="t-columns-4">
+
+							<ul class="t-columns-group">
+
+								<li><label>工种类型</label>
+									<div>
+										<select name="upgradeApt" id="upgradeApt">
+											<option value="0">货车检车员</option>
+											<option value="1">列检值班员</option>
+											<option value="2">动态检车员（TFDS)</option>
+											<option value="3">铁路车辆钳工（车辆站修）</option>
+											<option value="4">铁路机车车辆制动钳工（车辆站修）</option>
+											<option value="5">焊工（车辆站修）</option>
+										</select>
+									</div>
+								</li>
+								<li class="width-all t-list-bottom-btns">
+									<label>&nbsp;</label>
+									<div>
+										<a class="t-btn t-btn-lg t-btn-blue" id="searchBtn" name="searchBtn">查 询</a>
+									</div>
+								</li>
+							</ul>
+
+						</div>
+					</div>
+				</div>
+			</form>
+			<div class="jf-search-result">
+				<!-- 列表区域 -->
+			</div>
+			<ul class="t-columns-group">
+				<li class="width-all t-list-bottom-btns"><label for="fm02"> &nbsp; </label>
+					<div>
+						<a class="t-btn t-btn-xs  t-btn-blue" id="releaSeWork">导入试卷</a>
+						<a class="t-btn t-btn-xs  t-btn-blue" id="unlockAccept">导入答案</a>
+						<a class="t-btn t-btn-xs  t-btn-blue" id="exportExcel">更新试卷</a>
+						<a class="t-btn t-btn-xs  t-btn-blue" id="exportExcel">删除试卷</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+	</div>
+
+    <script src="../../assets/requirjsMainBuild.js"></script>
+    <script src="../../assets/lib/requirejs/requirejs.min.js" data-main="../../../js/testManager/testManager"></script>
+</body>
+</html>
