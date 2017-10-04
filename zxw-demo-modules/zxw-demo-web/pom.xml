@@ -83,7 +83,18 @@
            <artifactId>shiro-all</artifactId>
        </dependency>
        <!-- shiro&zxw依赖 -->	
-       
+       	<dependency>
+	    <groupId>org.apache.poi</groupId>
+	    <artifactId>poi</artifactId>
+	</dependency>
+ 	<dependency>
+	    <groupId>org.apache.poi</groupId>
+	    <artifactId>openxml4j</artifactId>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.poi</groupId>
+	    <artifactId>poi-ooxml</artifactId>
+	</dependency>
        <dependency>
 		    <groupId>xstream</groupId>
 		    <artifactId>xstream</artifactId>

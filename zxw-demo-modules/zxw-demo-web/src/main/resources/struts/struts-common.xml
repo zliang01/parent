@@ -10,5 +10,8 @@
     	 <action name="cacheAction" class="cmo.zxw.demo.action.CacheAction">
     		<result name="success">/</result>
     	</action>
+    	 <action name="staffInfoAction" class="cmo.zxw.demo.action.StaffInfoAction">
+    		<result name="success">/</result>
+    	</action>    	
 	</package>
 </struts>

@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>人员修改</title>
+<link rel="stylesheet" href="../../css/list.css" type="text/css"/>
+</head>
+<body>
+<!-- content -->
+<div id = "staffaddContent">
+<div class="current">
+<div>
+	<form id="searchForm" name="searchForm">
+		<div class="t-list-search t-columns-4">
+			<ul class="t-columns-group">
+               <li>
+                   <label for="staffId">
+                      员工编号
+                   </label>
+                   <div>
+                       <input id="staffId" name="staffId" type="text">
+                   </div>
+               </li>
+               <li>
+                   <label for="staffName">
+                      员工姓名
+                   </label>
+                   <div>
+                       <input id="staffName" name="staffName" type="text">
+                   </div>
+               </li>
+               <li>
+                   <label for="staffEmployee">
+                      员工部门
+                   </label>
+                   <div>
+                       <input id="staffEmployee" name="staffEmployee" type="text">
+                   </div>
+               </li>
+               <li>
+                   <label for="roleName">
+                     员工角色
+                   </label>
+                   <div>
+                      <select id ="addStaffSelect">
+                      	 <option value="0"></option>
+						  <option value="1">管理员</option>
+						  <option value="2">评审会</option>
+						  <option value="3">组委会</option>
+						</select>
+                   </div>
+               </li>   
+        
+			</ul>
+		</div>
+	</form>
+		<div class = "btn-foot">
+			<button style="float: right" class="t-btn t-btn-sm button staffaddbtn">确定</button>
+		</div>
+</div>
+</div>
+<div class="infolist">
+<table id="staffListTable" width="100%" border="0" cellpadding="0" cellspacing="0">
+</table>
+</div>
+</div>
+    <script src="../../assets/requirjsMainBuild.js"></script>
+    <script src="../../assets/lib/requirejs/requirejs.min.js" data-main="../../../js/common/staffList/staffadd"></script>
+</body>
+</html>
