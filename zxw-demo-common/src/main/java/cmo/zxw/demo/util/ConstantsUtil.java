@@ -1,4 +1,5 @@
 package cmo.zxw.demo.util;
+
 public final class ConstantsUtil {
 	//请求成功编码
 	public static final String SUCCESS_CODE = "0000";
@@ -8,4 +9,7 @@ public final class ConstantsUtil {
 	public static final String  SUCCESS_RETURN_MESSION = "success";
 	//请求失败响应信息
 	public static final String  FAIL_RETURN_MESSION = "fail";
+	
+	public static final String COMMONCONTANTS="COMMONCONTANTS";
+	public static final String EXAMSUBJECTS="EXAMSUBJECTS";
 }
