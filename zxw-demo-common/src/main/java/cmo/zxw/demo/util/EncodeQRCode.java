@@ -63,7 +63,10 @@ public final class EncodeQRCode {
 	 * @param contents 二维码内容  
 	 * @return image 二维码图片
 	 * */
-	private static BufferedImage encodeImg(String contents){
+	private static BufferedImage encodeImg(String contents,File file){
+		if(file!=null) {
+			FontImage.mkdirs(file.getAbsolutePath());
+		}
 		BufferedImage image = null;
 		try{
 			BitMatrix matrix = new MultiFormatWriter().encode(contents, BarcodeFormat.QR_CODE, QRCODE_SIZE-BLANK_SIZE, QRCODE_SIZE-BLANK_SIZE, hints);
@@ -154,7 +157,7 @@ public final class EncodeQRCode {
 	 * @param bottomDes 底部文字
 	 * */
 	public static void getQRCodeImg(String contents,String format,File file,String bottomDes,String topDes){
-		BufferedImage image = encodeImg(contents);
+		BufferedImage image = encodeImg(contents,file);
 		try {
 			addFontImage(image,bottomDes,false);
 			addFontImage(image,topDes,true);
@@ -170,7 +173,7 @@ public final class EncodeQRCode {
 	 * @param file 输出文件
 	 * */
 	public static void writeToFile(String contents,String format,File file){
-		BufferedImage image = encodeImg(contents);
+		BufferedImage image = encodeImg(contents,file);
 		try {
 			ImageIO.write(image, format, file);
 		} catch (IOException e) {
@@ -185,7 +188,7 @@ public final class EncodeQRCode {
 	 * @param file 输出文件
 	 * */
 	public static void writeToFile(String contents,String format,String logoImgPath,File file){
-		BufferedImage image = encodeImg(contents);
+		BufferedImage image = encodeImg(contents,file);
 		File logoImg = new File(logoImgPath);
 		try {
 			BufferedImage src = ImageIO.read(logoImg);
@@ -203,7 +206,7 @@ public final class EncodeQRCode {
 	 * @param bottomDes 底部文字
 	 * */
 	public static void writeToFile(String contents,String format,File file,String bottomDes){
-		BufferedImage image = encodeImg(contents);
+		BufferedImage image = encodeImg(contents,file);
 		try {
 			addFontImage(image,bottomDes,false);
 			ImageIO.write(image, format, file);
@@ -220,7 +223,7 @@ public final class EncodeQRCode {
 	 * @param bottomDes 底部文字
 	 * */
 	public static void writeToFile(String contents,String format,String logoImgPath ,File file,String bottomDes){
-		BufferedImage image = encodeImg(contents);
+		BufferedImage image = encodeImg(contents,file);
 		File logoImg = new File(logoImgPath);
 		try {
 			BufferedImage src = ImageIO.read(logoImg);
@@ -238,7 +241,7 @@ public final class EncodeQRCode {
 	 * @param stream 输出流
 	 * */
 	public static void writeToStream(String contents,String format,OutputStream stream){
-		BufferedImage image = encodeImg(contents);
+		BufferedImage image = encodeImg(contents,null);
 		try {
 			ImageIO.write(image, format, stream);
 		} catch (IOException e) {

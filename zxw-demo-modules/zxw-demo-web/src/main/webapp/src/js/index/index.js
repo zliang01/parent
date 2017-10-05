@@ -30,7 +30,7 @@ require(['kandtabs',
 			}
 		})
 		s3.innerHTML=s2.innerHTML;
-		timer=setInterval(mar,30)
+		timer=setInterval(mar,30000)
 	}
 	function mar(){
 		var params = {

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zxw.demo.dao.common.IExamineeApplicationDaoService">
+	<insert id="insertExamineeApplication" parameterType="java.util.List">
+		insert into examinee_application (applicationId,examineeId,workTypeId,subjectId,QRCodeURL) values
+		<foreach collection="list" item="item" index="index" open="" separator="," close="">
+			(#{item.applicationId,jdbcType=VARCHAR}, #{item.examineeId,jdbcType=VARCHAR},
+			#{item.workTypeId,jdbcType=VARCHAR},#{item.subjectId,jdbcType=VARCHAR},
+			#{item.QRCodeURL,jdbcType=VARCHAR})
+		</foreach>
+	</insert>
+	<delete id="delExamineeApplication" parameterType="java.util.List">
+		delete from examinee_application where applicationId in
+		<foreach collection="list" item="item" index="index" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</delete>
+</mapper>
