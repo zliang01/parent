@@ -7,8 +7,8 @@ require(['Util'],function(Util){
 	};
 	var staffadd =function(){
 		var result = getForm();
-		var roleName = $("#addStaffSelect").find("option:selected").text();
-		$.extend(result,{"roleName":roleName});
+		var roleId = $("#addStaffSelect").find("option:selected").val();
+		$.extend(result,{"roleId":roleId});
 		var param={
 				service:"staffInfoService",
 				method:"saveStaffInfo",

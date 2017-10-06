@@ -49,11 +49,13 @@
 			</ul>
 		</div>
 	</form>
-		<div class = "btn-foot">
-			<button style="float: left" class="t-btn t-btn-sm button staffListbtnadd">新增</button>
-			<input id="excelFile" size='1' name="excelFile" type="file"   onchange="importIPlan();"
-         			style="cursor:hand;position:absolute;right:10px;filter:alpha(opacity=0);-moz-opacity:0;opacity:0;width:10px;"  hidefocus>         
-   				<input type="button" id="importUser" value="导入人员"  style="float:left;"   class="submit t-btn t-btn-sm button" onclick="excelFile.click();">
+		<form  id="excelFileForm" enctype="multipart/form-data" method="post" action="/zxw-demo-web/uploadMarkActive!uploadMarkActive.action">
+          <input  id="excelFile" type="file" name="excel"  style="cursor:hand;position:absolute;right:10px;filter:alpha(opacity=0);-moz-opacity:0;opacity:0;width:10px;" >     	
+        </form>
+		<div class = "btn-foot"> 
+			<button style="float: left" class="t-btn t-btn-sm button staffListbtnadd">添加人员</button>
+			<button style="float: left" class="t-btn t-btn-sm button importUser"  onclick="excelFile.click();" >批量添加人员</button>		
+			<button style="float: left" class="t-btn t-btn-sm button examineeListbtn">考生管理</button>
 			<button style="float: right" class="t-btn t-btn-sm button staffListbtnSearch">查询</button>
 			<button style="float: right" class="t-btn t-btn-sm button staffListbtnClear">重置</button>
 		</div>

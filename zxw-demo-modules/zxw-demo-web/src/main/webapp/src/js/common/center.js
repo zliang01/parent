@@ -2,11 +2,24 @@ require(['jquery1',
          'cfcoda',
          'assets/common/ajax_amd'
          ],function(Jquery1,Cfcoda,ajax){
-	
+	var staffInfo=null;
 	var eventInit = function(){
 		//初始化菜单
 		initQuickMenu();
-	}
+	};
+	var getCache = function(){
+		var param={
+				service:"",
+				method:"staffInfo",
+				params:JSON.stringify({})
+		};
+		ajax.postJson('/zxw-demo-web/cacheAction!getCache.action',param,function(result,status){
+			staffInfo=null;
+			if(result.returnCode=="0000" && result.bean.param.beans[0]){
+				staffInfo = result.bean.param.beans[0];
+			}
+		},true);
+	};
 	
 	var initQuickMenu = function(){
 		var params={
@@ -23,7 +36,9 @@ require(['jquery1',
 			for(var i=0;i<result.beans.length;i++){
 				switch(result.beans[i].menutype){
 				case "0":
-					if(result.beans[i].menuname=="人员管理"){
+					debugger;
+					if(result.beans[i].menuname=="人员管理" && staffInfo.roleId=="101" ){
+						result.beans[i].menuurl="src/moudlehtml/staffList/staffList.html";
 					};
 					mainMenus.push('<li><p>'+result.beans[i].menuname+'</p><a href="#" onclick="parent.addTab(\''+result.beans[i].menuurl+'\',\''+result.beans[i].menuname+'\')"><img src="'+result.beans[i].menuico+'" width="'+result.beans[i].icowidth+'" height="'+result.beans[i].icoheight+'" /></a></li>');
 					break;
@@ -44,6 +59,7 @@ require(['jquery1',
 	}
 
 	$(function() {
+		getCache();
 		//页面加载完成后执行初始化事件函数
 		eventInit();
 	});	

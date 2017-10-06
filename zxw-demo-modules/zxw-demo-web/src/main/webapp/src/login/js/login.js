@@ -1,4 +1,3 @@
-//2016 12 12 by xuexiangqian
 define(['assets/common/ajax_amd','jquery1'],function(ajax,Jquery1){
 	var username;
 	var password;
@@ -34,12 +33,31 @@ define(['assets/common/ajax_amd','jquery1'],function(ajax,Jquery1){
 	//进行后台用户名和密码校验
 	var checkLogin = function(){
 		var param={
-			staffid:username,
-			password:password
+				service:"staffInfoService",
+				method:"queryLoginInfoByStaffId",
+				params:JSON.stringify({
+					staffId:username,
+					password:password
+				})
 		};
-		ajax.postJson('/zxw-web/front/sh/login!index?uid=login01',param,function(result,status){
+		ajax.postJson('/zxw-demo-web/loginAction!login.action',param,function(result,status){
 		if(result.returnCode=="0000"){
-			window.location.href="/zxw-demo-web/index.html";
+			var roleId = result.beans[0].roleId;
+			var indexUrl="/zxw-demo-web/examIndex.html";
+			switch(result.beans[0].roleId){
+			case "101":
+				indexUrl="/zxw-demo-web/index.html";
+				break;
+			case "102":
+				indexUrl="/zxw-demo-web/index.html";
+				break;
+			case "103":
+				indexUrl="/zxw-demo-web/index.html";
+			break;
+			default:
+				indexUrl="/zxw-demo-web/examIndex.html";
+			};
+			window.location.href=indexUrl;
 		}else{
 			alert("登陆异常，请重新登陆:"+result.returnMessage);
 		}

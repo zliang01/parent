@@ -1,5 +1,9 @@
 package cmo.zxw.demo.action;
 
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.session.Session;
+import org.apache.shiro.subject.Subject;
+
 import cmo.zxw.demo.bean.MyInput;
 import cmo.zxw.demo.bean.MyOutpt;
 import cmo.zxw.demo.util.JsonUtil;
@@ -9,12 +13,18 @@ public class CacheAction extends BaseAction{
 	public String saveCache(){
 		MyInput input  = new MyInput();
 		this.getParams(input);
-		this.getHttpRequest().getSession().setAttribute("cache", input.getParams());
+		Subject currentUser = SecurityUtils.getSubject();
+		Session  session = currentUser.getSession();
+		session.setAttribute("tem_cache", input.getParams());
 		return null;
 	}
 	public String getCache(){
 		MyOutpt out = new MyOutpt();
-		Object obj= this.getHttpRequest().getSession().getAttribute("cache");
+		MyInput input =new MyInput();
+		this.getParams(input);
+		Subject currentUser = SecurityUtils.getSubject();
+		Session  session = currentUser.getSession();
+		Object obj= session.getAttribute(input.getMethod());
 		out.getBean().put("param", obj);
 		out.setReturnCode("0000");
 		this.sendJson(JsonUtil.JsonToMyOutput(out));

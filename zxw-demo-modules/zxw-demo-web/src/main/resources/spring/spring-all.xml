@@ -6,5 +6,6 @@
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 <!-- 	<import resource="spring-action.xml" /> -->
 	<import resource="spring-service.xml" />
+	<import resource="spring-login-shiro.xml" />
 <!-- 	<import resource="../spring-service-all.xml"/> -->
 </beans>

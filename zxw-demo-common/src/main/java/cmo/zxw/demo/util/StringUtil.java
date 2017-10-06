@@ -14,6 +14,15 @@ public class StringUtil {
 		
 		return str != null && str.trim().length() > 0;
 	}
+	/**
+	 * 判断字符串是否非null && 非空字符 
+	 * 
+	 * @param param
+	 * @return
+	 */
+	public static boolean isNotEmpty(String param) {
+		return param != null && !"".equals(param.trim());
+	}
 
 	/**
 	 * convert String object to BigDecimal

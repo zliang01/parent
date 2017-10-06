@@ -12,6 +12,12 @@
     	</action>
     	 <action name="staffInfoAction" class="cmo.zxw.demo.action.StaffInfoAction">
     		<result name="success">/</result>
-    	</action>    	
+    	</action>
+    	<action name="uploadMarkActive" class="cmo.zxw.demo.action.MarketActivAction">
+			<result name="success">/</result>
+        </action>  
+         <action name="loginAction" class="cmo.zxw.demo.action.LoginAction">
+			<result name="success">/</result>
+        </action>
 	</package>
 </struts>

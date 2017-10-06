@@ -13,5 +13,6 @@ public interface IStaffInfoService {
 	  public MyOutpt delStaffInfoById(MyInput input) throws Exception;
 	  public MyOutpt editStaffInfo(MyInput input) throws Exception;
 	  public MyOutpt saveStaffInfo(MyInput input) throws Exception;
-
+	  public MyOutpt saveBatchStaffInfo(MyInput input) throws Exception;
+	  public MyOutpt queryLoginInfoByStaffId(MyInput input) throws Exception;
 }

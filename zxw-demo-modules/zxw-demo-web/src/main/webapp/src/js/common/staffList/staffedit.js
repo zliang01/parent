@@ -12,7 +12,7 @@ require(['Util'],function(Util){
 		var boolean = confirm('是否确认修改?');
 		if(boolean){
 			var result = getForm();
-			var roleName = $("#editStaffSelect").find("option:selected").text();
+			var roleName = $("#editStaffSelect").find("option:selected").val();;
 			$.extend(result,{"roleName":roleName});
 			var param={
 					service:"staffInfoService",
@@ -28,8 +28,12 @@ require(['Util'],function(Util){
 	};
 
 	var getCache = function(){
-		Util.ajax.postJson('/zxw-demo-web/cacheAction!getCache.action',{},function(result,status){
-			debugger;
+		var param={
+				service:"",
+				method:"tem_cache",
+				params:JSON.stringify({})
+		};
+		Util.ajax.postJson('/zxw-demo-web/cacheAction!getCache.action',param,function(result,status){
 			if(result.returnCode=="0000" && result.bean.param){
 				var params = result.bean.param;
 				$el.find("#staffId").val(params.staffId);

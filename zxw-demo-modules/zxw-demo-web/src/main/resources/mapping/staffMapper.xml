@@ -19,7 +19,9 @@
 				LIMIT #{page}, #{pageCapacity}
     	    </if>
   </select>
-  
+    <select id="queryStaffRoleId" resultType="java.util.Map"  parameterType="java.util.Map" >
+		SELECT * FROM  role WHERE roleName = #{roleName}
+  </select>
     <select id="queryStaffInfoTotal" resultType="java.lang.Integer"  parameterType="java.util.Map" >
 		SELECT count(*) as total From `staff_info`  s, `role` r WHERE s.roleId=r.roleId 
 			<if test="staffId != '' and staffId !=null" >    		
@@ -48,7 +50,7 @@
       <if test="staffEmployee != null" >  
         staffEmployee = #{staffEmployee},
       </if>
-       <if test="roleName != null" >  
+        <if test="roleName != null" >  
         roleId = (select roleId from  role where roleName = #{roleName})
       </if>
     </set>  
@@ -56,7 +58,18 @@
   </update>
   <!-- 新增人员信息 -->
     <insert id="addStaffInfo" parameterType="java.util.Map">
-    insert into `staff_info` (`staffId`, `staffName`, `staffEmployee`, `password`, `salt`) 
-    values (#{staffId},#{staffName},#{staffEmployee},#{password},#{salt})
+    insert into `staff_info` (`staffId`, `staffName`, `staffEmployee`,`roleId`,`password`,`salt`) 
+    values (#{staffId},#{staffName},#{staffEmployee},#{roleId},#{password},#{salt})
    </insert>
+     <!-- 批量新增人员信息 -->
+ <insert id="saveBatchStaffInfo" parameterType="java.util.List"> 
+    insert into `staff_info` (`staffId`, `staffName`, `staffEmployee`,`roleId`,`password`,`salt`)  values
+   	<foreach collection="list" item="emp" index= "index"  separator="," >
+   		(#{emp.staffId},#{emp.staffName},#{emp.staffEmployee},#{emp.roleId},#{emp.password},#{emp.salt})
+   </foreach>
+  </insert>
+     <select id="queryLoginInfoByStaffId" resultType="java.util.Map"  parameterType="java.util.Map" >
+		SELECT  staffId ,password,salt,roleId FROM staff_info WHERE staffId =#{staffId}
+		 UNION SELECT idCard AS staffId ,password,salt,CODE AS roleId FROM examinee_info  WHERE idCard =#{staffId}
+  </select>
 </mapper>

@@ -7,9 +7,10 @@ require(['list','Util'],function(List,Util){
 		$('.staffListbtnSearch').click($.proxy(staffListbtnSearch,this));
 		$('.staffListbtnadd').click($.proxy(staffListbtnadd,this));
 		$('.staffListbtnClear').click($.proxy(staffListbtnClear,this));
+		$('.examineeListbtn').click($.proxy(examineeListbtn,this));
 		//首次加载执行一次查询
 		staffListbtnSearch();
-	}
+	};
 	//搜索方法
 	var staffListbtnSearch = function (){
 		var result = getForm();
@@ -89,35 +90,6 @@ require(['list','Util'],function(List,Util){
 		 height:270  //对话框高度
 	});
 };
-	
-function importIPlan(){
-    var pathName = document.getElementById("excelFile").value;
-    var suffix = pathName.substring(pathName.lastIndexOf('.')+1, pathName.length);
-    if((suffix != "xls") && (suffix != "xlsx")){
-        alert("请选择excel文件！");
-        document.getElementById("usermanage").reset();//表单内容设置为空
-        return;
-    };
-    
-    importIcPlan(pathName);
-    
-};
-function importIcPlan(pathName){
-    var startIndex = pathName.lastIndexOf('\\');
-    var endIndex = pathName.lastIndexOf('.');
-    var fileName = pathName.substring(startIndex+1, endIndex);
-    var strs= new Array(); //定义一数组
-    strs = fileName.split("_");
-    if((strs.length != 2) && (strs[0] != "All") && (strs[1] != "User")){
-        alert("对不起！请选择正确的excel文件，文件名如：All_User.xlsx");
-        document.getElementById("usermanage").reset();
-        return;
-    }
-    //如果不对文件名进行限制的话只需要下面两句话 实现跳转就可以
-    document.getElementById("usermanage").action="importUsers.action";
-    document.getElementById("usermanage").submit();
-    
-}	
 	//删除人员信息
 	var delstaffList = function(row){
 		var param={
@@ -152,13 +124,33 @@ function importIcPlan(pathName){
 /*			window.top.addTab('src/moudlehtml/personnelList/personadd.html','通讯录2');
 			return false;*/
 	};
+	
+	var importIPlan =  function (){
+	    var pathName = document.getElementById("excelFile").value;
+	    var suffix = pathName.substring(pathName.lastIndexOf('.')+1, pathName.length);
+	    if((suffix != "xls") && (suffix != "xlsx")){
+	        alert("请选择excel文件！");
+	        return false;
+	    }else{
+	    	return true;
+	    }
+	};
 	//获取输入框参数
 	var getForm= function(){
 		var $form = $('#staffListContent form');
 		var result = Util.form_amd.serialize($form);
 		return result;
 	};
+	var examineeListbtn  = function(){
+		window.top.addTab('src/moudlehtml/personnelList/personnelList.html','考生管理');
+	};
 	$(function() {
+		$('#staffListContent').find("#excelFile").change(function(){ 
+			var boo = importIPlan();
+			if(boo){
+				$("#excelFileForm").submit(); 
+			}
+			}) ;
 		//页面加载完成后执行初始化事件函数
 		eventInit();
 	});

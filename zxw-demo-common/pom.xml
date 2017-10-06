@@ -30,6 +30,12 @@
   		<groupId>org.springframework</groupId>
   		<artifactId>spring-beans</artifactId>
   	</dependency>
+  		 <!-- shiro&zxw依赖 -->
+		<dependency>
+           <groupId>org.apache.shiro</groupId>
+           <artifactId>shiro-all</artifactId>
+       </dependency>
+       <!-- shiro&zxw依赖 -->	
   			<dependency>
 		    <groupId>commons-beanutils</groupId>
 		    <artifactId>commons-beanutils-core</artifactId>
